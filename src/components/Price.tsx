@@ -8,7 +8,7 @@ export default function Price({precoTotal}:any){
   return (
     <section className="w-full flex h-24 flex-col items-end justify-end ">
     <div className=" flex h-24 w-full flex-col gap-4 border-t border-solid  border-[#3F3F46]  pl-8 pt-8 " >
-      <h2 className="w-full flex flex-row items-start justify-between gap-64 text-[#E4E4E7] max-sm:gap-40">
+      <h2 className="w-full flex flex-row items-start justify-between gap-64 text-[#E4E4E7] max-sm:gap-2">
         Total:{" "}
         <span className="h-6 w-full ">
           {" "}
