@@ -11,9 +11,9 @@ export default function Card() {
 
 
   return (
-    <div className="w-full flex h-[104px] flex-col items-center gap-6 max-[428px]:w-full ">
+    <div className="w-full flex h-[104px] flex-col items-center gap-6 ">
       {products.map((item) => (
-        <div key={item.id} className="w-full flex flex-row ">
+        <div key={item.id} className="w-full flex flex-row  ">
           <Image 
             src={item.image}
             alt={item.nome}
@@ -33,7 +33,7 @@ export default function Card() {
               <ButtonCard itemId={item.id} status={status} setStatus={setStatus} />
               {item.quantidade}
             </div>
-          <button className="w-4  h-4 absolute top-0 left-64 flex items-center justify-center text-[#A855F7] rounded-full hover:text-black hover:bg-[#A855F7]" onClick={() =>{
+          <button className="w-4  h-4 absolute top-0 left-[250px] flex items-center justify-center text-[#A855F7] rounded-full hover:text-black hover:bg-[#A855F7]" onClick={() =>{
              setSelectItemId(item.id)
              setStatus(!status)
              }}>x</button>
