@@ -2,14 +2,17 @@
 import Image from "next/image";
 import minus from "../assets/minus.svg";
 import plus from "../assets/plus.svg";
-import { useContext } from "react";
+import { Dispatch, SetStateAction, useContext, useEffect } from "react";
 import { AuthContext } from "@/context/Auth";
 type Products = {
   itemId: number;
+  setStatus: Dispatch<SetStateAction<boolean>>;
+  status:boolean
 };
-export default function ButtonCard({ itemId }: Products) {
+export default function ButtonCard({ itemId ,status,setStatus}: Products) {
   const { products, setProducts } = useContext(AuthContext);
-
+ 
+ 
   const increment = () => {
     let copyProducts = [...products];
     let item = copyProducts.find((product) => product.id === itemId);
@@ -23,6 +26,8 @@ export default function ButtonCard({ itemId }: Products) {
   const decrement = () => {
     let copyProducts = [...products];
     let item = copyProducts.find((product) => product.id === itemId);
+    console.log(item)
+  
     if (item && item.quantidade > 1) {
       item.quantidade -= 1;
       item.copyPreco -= item.preco
@@ -39,6 +44,7 @@ export default function ButtonCard({ itemId }: Products) {
       >
         <Image src={minus} alt="minus" width={16} height={16} />
       </button>{" "}
+     
       <button
         onClick={increment}
         className="h-10 w-10 gap-2 rounded-lg border-[2px] border-solid border-[#9747FF] p-3 drop-shadow-lg hover:bg-[#9333EA]"

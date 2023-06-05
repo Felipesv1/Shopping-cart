@@ -8,7 +8,7 @@ export default function BottomFixed(){
   let precoTotal = products.reduce((acc,el)=> acc + el.copyPreco,0)
 
   return(
-    <section className="w-[428px]  fixed flex h-[260px] flex-col justify-start bg-[#18181B] max-sm:w-full ">
+    <section className="w-[428px]  fixed flex h-[260px] flex-col justify-start bg-[#18181B] max-[428px]:w-full ">
       <Price precoTotal={precoTotal}/>
       <Buttom precoTotal={precoTotal}/>
     </section>
